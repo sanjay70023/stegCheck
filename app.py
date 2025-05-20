@@ -18,7 +18,7 @@ detailed_report_entries = []
 # Load models (outside the loop to load only once)
 # Wrap in try-except for robustness during startup
 try:
-    cnn_model = load_model("cnn_model_real_stegoappdb.h5")
+    cnn_model = load_model("cnn_model_real_stegoappdb.h5", compile=False)
     spam_model = joblib.load("spam_rf_model.pkl")  # Ensure you have this model file
 except Exception as e:
     st.error(f"🚨 Critical Error: Could not load machine learning models: {e}")
